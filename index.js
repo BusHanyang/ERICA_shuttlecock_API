@@ -1,7 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const https = require('https')
+const http = require('http')
 const port = 3000;
 const app = express();
+
+
+/*https*/
+const options = {
+    key: fs.readFileSync('ssl/privkey.pem'),
+    cert: fs.readFileSync('ssl/cert.pem')
+};
+
 
 
 /*middle ware*/
@@ -35,6 +45,7 @@ app.use((err, req, res, next) => {
 });
 
 /*server*/
-app.listen(port, function(){
-    console.log('listening on port : ' + port);
-});
+// Create an HTTP service.
+http.createServer(app).listen(3000);
+// Create an HTTPS service identical to the HTTP service.
+https.createServer(options, app).listen(443);
