@@ -25,26 +25,23 @@ app.use(function (req, res, next){
     next();
 })
 
+/* body-parser */
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
-/*body-parser*/
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended:true}));
-
-
-/*router*/
-
-app.use(['/semester/week/giksa', '/semester/weekend/giksa', 'vacation/week/giksa','vacation/weekend/giksa'], require('./router/giksa'));
-app.use(['/semester/week/shuttlecock', '/semester/weekend/shuttlecock', 'vacation/week/shuttlecock', 'vacation/weekend/shuttlecock'], require('./router/shuttlecock'));
-app.use(['/semester/week/subway', '/semester/weekend/subway', 'vacation/week/subway', 'vacation/weekend/subway'], require('./router/subway'));
-app.use(['/semester/week/yesulin', '/semester/weekend/yesulin', 'vacation/week/yesulin', 'vacation/weekend/yesulin'], require('./router/yesulin'));
+/* router */
+app.use(['/semester/week/giksa', '/semester/weekend/giksa', 'vacation/week/giksa', 'vacation/weekend/giksa'], require('./router/giksa'))
+app.use(['/semester/week/shuttlecock', '/semester/weekend/shuttlecock', 'vacation/week/shuttlecock', 'vacation/weekend/shuttlecock'], require('./router/shuttlecock'))
+app.use(['/semester/week/subway', '/semester/weekend/subway', 'vacation/week/subway', 'vacation/weekend/subway'], require('./router/subway'))
+app.use(['/semester/week/yesulin', '/semester/weekend/yesulin', 'vacation/week/yesulin', 'vacation/weekend/yesulin'], require('./router/yesulin'))
 app.use((req, res, next) => {
-    next(createError(404));
-});
+  next(createError(404))
+})
 
 app.use((err, req, res, next) => {
-        res.status(404)
-        res.json({ errorcode: '404' })
-});
+  res.status(404)
+  res.json({ errorcode: '404' })
+})
 
 /*server*/
 // Create an HTTP service.
