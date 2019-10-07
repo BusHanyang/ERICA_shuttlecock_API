@@ -37,7 +37,11 @@ router.get('/', (req, res) => {
     return res.status(404).json({ error: 'Incorrect column' })
   }
   const jsondata = JSON.parse(data)
-  return res.json(jsondata.shuttlecock_week)
+  if (urlArr[2] == 'week') { //주중일 경우
+    return res.json(jsondata.shuttlecock_week)
+  } else { //주말일 경우
+    return res.json(jsondata.shuttlecock_weekend)
+  }
 })
 
 module.exports = router
