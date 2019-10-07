@@ -16,14 +16,14 @@ router.get('/', (req, res) => {
     case 'semester': // 학기중
       if (urlArr[2] == 'week') { // 주중
         var jsonPath = path.join(__dirname, '..', 'timetable', 'semester', 'week', 'Residence_week.json')
-      } else if (urlArr[2] == 'week') { // 주말
+      } else if (urlArr[2] == 'weekend') { // 주말
         var jsonPath = path.join(__dirname, '..', 'timetable', 'semester', 'weekend', 'Residence_weekend.json')
       }
       break
     case 'vacation': // 방학중
       if (urlArr[2] == 'week') { // 주중
         var jsonPath = path.join(__dirname, '..', 'timetable', 'vacation', 'week', 'Residence_week.json')
-      } else if (urlArr[2] == 'week') { // 주말
+      } else if (urlArr[2] == 'weekend') { // 주말
         var jsonPath = path.join(__dirname, '..', 'timetable', 'vacation', 'weekend', 'Residence_weekend.json')
       }
     default:
