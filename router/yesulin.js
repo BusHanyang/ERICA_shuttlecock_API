@@ -35,7 +35,7 @@ router.get('/', (req, res) => {
     return res.status(404).json({ error: 'Incorrect column' })
   }
   const jsondata = JSON.parse(data)
-  return res.json(jsondata.terminal_week)
+  return res.json(jsondata.yesulin_week)
 })
 
 module.exports = router
