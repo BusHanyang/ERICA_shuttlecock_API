@@ -30,10 +30,27 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 /* router */
+
+/*학기중*/
 app.use(['/semester/week/giksa', '/semester/weekend/giksa', 'vacation/week/giksa', 'vacation/weekend/giksa'], require('./router/giksa'))
 app.use(['/semester/week/shuttlecock', '/semester/weekend/shuttlecock', 'vacation/week/shuttlecock', 'vacation/weekend/shuttlecock'], require('./router/shuttlecock'))
 app.use(['/semester/week/subway', '/semester/weekend/subway', 'vacation/week/subway', 'vacation/weekend/subway'], require('./router/subway'))
 app.use(['/semester/week/yesulin', '/semester/weekend/yesulin', 'vacation/week/yesulin', 'vacation/weekend/yesulin'], require('./router/yesulin'))
+
+/*방학중 - 계절학기*/
+app.use(['/vacation_session/week/giksa', '/vacation_session/weekend/giksa', 'vacation/week/giksa', 'vacation/weekend/giksa'], require('./router/giksa'))
+app.use(['/vacation_session/week/shuttlecock', '/vacation_session/weekend/shuttlecock', 'vacation/week/shuttlecock', 'vacation/weekend/shuttlecock'], require('./router/shuttlecock'))
+app.use(['/vacation_session/week/subway', '/vacation_session/weekend/subway', 'vacation/week/subway', 'vacation/weekend/subway'], require('./router/subway'))
+app.use(['/vacation_session/week/yesulin', '/vacation_session/weekend/yesulin', 'vacation/week/yesulin', 'vacation/weekend/yesulin'], require('./router/yesulin'))
+
+
+/*방학중*/
+app.use(['/vacation/week/giksa', '/vacation/weekend/giksa', 'vacation/week/giksa', 'vacation/weekend/giksa'], require('./router/giksa'))
+app.use(['/vacation/week/shuttlecock', '/vacation/weekend/shuttlecock', 'vacation/week/shuttlecock', 'vacation/weekend/shuttlecock'], require('./router/shuttlecock'))
+app.use(['/vacation/week/subway', '/vacation/weekend/subway', 'vacation/week/subway', 'vacation/weekend/subway'], require('./router/subway'))
+app.use(['/vacation/week/yesulin', '/vacation/weekend/yesulin', 'vacation/week/yesulin', 'vacation/weekend/yesulin'], require('./router/yesulin'))
+
+
 app.use((req, res, next) => {
   next(createError(404))
 })

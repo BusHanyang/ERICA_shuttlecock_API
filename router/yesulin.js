@@ -26,6 +26,16 @@ router.get('/', (req, res) => {
       } else if (urlArr[2] == 'weekend') { // 주말
         var jsonPath = path.join(__dirname, '..', 'timetable', 'vacation', 'weekend', 'YesulIn_weekend.json')
       }
+      break
+    case 'vacation_session': // 방학중
+      if (urlArr[2] == 'week') { // 주중
+        var jsonPath = path.join(__dirname, '..', 'timetable', 'vacation_session', 'week', 'YesulIn_week.json')
+      } else if (urlArr[2] == 'weekend') { // 주말
+        var jsonPath = path.join(__dirname, '..', 'timetable', 'vacation_session', 'weekend', 'YesulIn_weekend.json')
+      }
+      break
+    default:
+      break
   }
 
   try {
