@@ -16,7 +16,8 @@ URL 의 구성은 다음과 같습니다.<br>
 |코드네임|구분|
 |---|---|
 |`semester`|학기 중|
-|`vacation`|방학 및 계절학기|
+|`vacation_session`|계절학기|
+|`vacation`|방학|
 <br>
 
 * 2) 일자 구분
