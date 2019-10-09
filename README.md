@@ -1,6 +1,8 @@
 # Shuttlecock_API
 ## 한양대학교 ERICA캠퍼스 셔틀버스 API
 
+[![Build Status](http://server.jaram.net:5903/buildStatus/icon?job=shuttlecock-api)](http://server.jaram.net:5903/job/shuttlecock-api/)
+
 
 ### 1. 사용법
 
