@@ -1,7 +1,7 @@
 # Shuttlecock_API
 ## 한양대학교 ERICA캠퍼스 셔틀버스 API
 
-[![Build Status](http://server.jaram.net:5903/buildStatus/icon?job=shuttlecock-api)](http://server.jaram.net:5903/job/shuttlecock-api/)
+[![Build Status](http://server.jaram.net:5903/buildStatus/icon?job=shuttlecock-api)](http://server.jaram.net:5903/job/shuttlecock-api/) ![Build Status](https://img.shields.io/website?down_color=lightgrey&down_message=dead&label=API&up_color=blue&up_message=Online&url=https%3A%2F%2Fshuttle.jaram.net%2Fsemester%2Fweek%2Fgiksa) ![license](https://img.shields.io/badge/license-GPL3.0-important)
 
 
 ### 1. 사용법
@@ -94,19 +94,3 @@ json 데이터의 구성은 다음과 같이 이루어져 있습니다.
 현재 JSON 데이터의 기준은 19.09.23 에 배포된 문서를 기반으로 하여 작성되었으며 원본은 `timetable/general.pdf`와 `timetable/source.pdf` 에서 확인하실 수 있습니다.
 
 2019년 2학기에 개최된 '한양대학교ERICA 총학생회 정기확대운영위원회' 의 [보고내용](https://www.facebook.com/hanyangericagsa/posts/1783134645318881)에 따르면 *평소에는 시간표를 따르되, 수요가 급증하는 시간대인 등, 하교시에는 유동적으로 배차* 하도록 되어있습니다. 때문에 총무관리처에서 배포한 시간표를 기준으로 작성된 이 API가 절대적인 척도가 되지 못함을 미리 밝힙니다.
-
-
-### 4. 설치방법
-기본 사용 포트 : 3000
-
-```
-일반 로컬 구축
-git clone
-yarn install / node install
-yarn start / node start index.js
-```
-```
-도커 기반 구축
-docker build -t shuttle-api .
-docker run -p 3000:3000 -d shuttle-api:latest
-```
