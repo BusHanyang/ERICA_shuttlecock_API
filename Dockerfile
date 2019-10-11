@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:dubnium-alpine
 
 WORKDIR /usr/src/shuttle_API
 COPY package*.json ./
