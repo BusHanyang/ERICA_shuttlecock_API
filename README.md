@@ -1,7 +1,7 @@
 # Shuttlecock_API
 ## 한양대학교 ERICA캠퍼스 셔틀버스 API
 
-[![Build Status](http://server.jaram.net:5903/buildStatus/icon?job=shuttlecock-api)](http://server.jaram.net:5903/job/shuttlecock-api/) ![Build Status](https://img.shields.io/website?down_color=lightgrey&down_message=dead&label=API&up_color=blue&up_message=Online&url=https%3A%2F%2Fshuttle.jaram.net%2Fsemester%2Fweek%2Fgiksa) ![license](https://img.shields.io/badge/license-GPL3.0-important)
+[![Build Status](http://jenkins.jaram.net/job/shuttlecock-api/badge/icon)](http://jenkins.jaram.net/job/shuttlecock-api/) ![API Status](https://img.shields.io/website?down_color=lightgrey&down_message=dead&label=API&up_color=blue&up_message=Online&url=https%3A%2F%2Fshuttle.jaram.net%2Fsemester%2Fweek%2Fgiksa) ![license](https://img.shields.io/badge/license-GPL3.0-important)
 
 
 ### 1. 사용법
