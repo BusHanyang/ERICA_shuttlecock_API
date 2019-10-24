@@ -1,5 +1,7 @@
 {
-  "shuttlecock_weekend": [
+  "shuttlecock_o_week": [
+    { "time": "07:50", "type": "C" },
+    { "time": "08:20", "type": "C" },
     { "time": "08:50", "type": "C" },
     { "time": "09:20", "type": "C" },
     { "time": "09:50", "type": "C" },
