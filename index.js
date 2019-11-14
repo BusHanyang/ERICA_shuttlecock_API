@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const https = require('https')
+// const https = require('https')
 const fs = require('fs')
 const http = require('http')
 // const port = 3000;
@@ -9,10 +9,14 @@ const app = express();
 
 
 /*https*/
-const options = {
-    key: fs.readFileSync('ssl/privkey.pem'),
-    cert: fs.readFileSync('ssl/cert.pem')
-};
+//Delete Https connection info for OSS class.
+//원래는 Cloudflare https 인증서를 삽입하여 HTTPS 연결을 통해 API 서버에 접속하도록 하였으나
+//실제 서비스 하고 있는 인증서와 도메인을 중복으로 활용할 수 없어 http 연결을 통해 로컬에서 구동 가능하도록 설정함.
+
+// const options = {
+//     key: fs.readFileSync('ssl/privkey.pem'),
+//     cert: fs.readFileSync('ssl/cert.pem')
+// };
 
 
 
@@ -67,4 +71,4 @@ app.use((err, req, res, next) => {
 // Create an HTTP service.
 http.createServer(app).listen(3000);
 // Create an HTTPS service identical to the HTTP service.
-https.createServer(options, app).listen(443);
+// https.createServer(options, app).listen(443);
