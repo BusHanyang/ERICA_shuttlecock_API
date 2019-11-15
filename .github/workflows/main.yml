@@ -1,0 +1,25 @@
+name: CI TEST                        # workflow 이름
+on:
+  push:                             # event trigger on push
+    branches: 
+      - master
+      - dev
+      - 2019_OSS
+
+jobs:
+  build:                             # job id
+    name: Build Test                 # job 이름
+    runs-on: ubuntu-latest           # 가상 환경
+    steps:
+    - uses: actions/checkout@v1
+    - name: GitHub Action for Yarn Pkg
+      uses: funkyremi/yarn-github-action@1.0.0
+    - name: Run Node server
+      env:                           # Set the secret as an environment
+        cert_secret:  ${{ secrets.cert }}
+        key:  ${{ secrets.priv }}
+      run: sudo chmod -R 777 /home/runner/work/shuttlecock_API/ && ls && yarn && ls && node index.js
+    - name: Build docker image    
+      run: docker build -t kygha7205/shuttle_api:latest .
+    - name: Test image
+      run: docker run -d -p 3000:3000 --name shuttle-api kygha7205/shuttle_api:latest
