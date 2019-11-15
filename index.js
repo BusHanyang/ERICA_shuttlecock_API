@@ -6,13 +6,23 @@ const http = require('http')
 // const port = 3000;
 const app = express();
 
+//FOR GITHUB ACTIONS CI TEST
+if (process.env.cert_secret){
+  var options = {
+    key: process.env.priv,
+    cert: process.env.cert
+  };
 
-
-/*https*/
-const options = {
+//IF RUN IN RELEASE 
+} else {
+  /*https*/
+  var options = {
     key: fs.readFileSync('ssl/privkey.pem'),
     cert: fs.readFileSync('ssl/cert.pem')
-};
+  };
+
+}
+
 
 
 
