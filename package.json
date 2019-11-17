@@ -4,7 +4,7 @@
   "start": "node index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node ./node_modules/mocha/bin/mocha --recursive ./**/*.spec.js"
+    "test": "node ./node_modules/mocha/bin/mocha --recursive --exit ./**/*.spec.js"
   },
   "description": "Shuttlecock Timetable API",
   "main": "index.js",
