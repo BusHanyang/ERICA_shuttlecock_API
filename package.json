@@ -2,6 +2,10 @@
   "name": "shuttlecock_API",
   "version": "1.0.0",
   "start": "node index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node ./node_modules/mocha/bin/mocha --recursive ./**/*.spec.js"
+  },
   "description": "Shuttlecock Timetable API",
   "main": "index.js",
   "repository": "https://github.com/CXZ7720/shuttlecock_API.git",
@@ -13,5 +17,9 @@
     "http": "^0.0.0",
     "https": "^1.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "supertest": "^4.0.2"
+  }
 }
