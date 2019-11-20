@@ -3,7 +3,26 @@
 
 [![Build Status](http://server.jaram.net:5903/buildStatus/icon?job=shuttlecock-api)](http://server.jaram.net:5903/job/shuttlecock-api/) ![API Status](https://img.shields.io/website?down_color=lightgrey&down_message=dead&label=API&up_color=blue&up_message=Online&url=https%3A%2F%2Fshuttle.jaram.net%2Fsemester%2Fweek%2Fgiksa) ![license](https://img.shields.io/badge/license-GPL3.0-important)
 
+*Jenkins 실시간 빌드 상태는 위 뱃지를 클릭해서 확인하실 수 있습니다.*
+### 0. 설치하기
+셔틀버스 시간안내 API는 Docker Image 형태로 배포되고 있습니다.
+터미널에 아래 명령어를 입력하세요.
 
+먼저 [도커를 시스템에 설치](https://docs.docker.com/install/linux/docker-ce/ubuntu/)한 후 아래 명령어를 실행시켜주세요.
+
+```
+docker run -d -p 3000:3000 --name shuttle_api kygha7205/shuttle_api:2019_oss
+```
+
+이 서비스는 호스트 PC의 3000번 포트를 통해서 서비스 됩니다.
+이미 점유하고 있는 서비스가 없는지, 방화벽 등에 의해 해당 포트가 차단되지 않았는지 등을 확인한 후 아래 주소로 접속합니다.
+> http://localhost:3000
+
+
+정상적으로 서비스가 가동되었다면 다음과 같이 보이는 것이 정상입니다.
+```
+{"errorcode":"404"}
+```
 ### 1. 사용법
 
 URL 입력을 통해 정류소의 시간표를 JSON 형태로 전달받습니다.

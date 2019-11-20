@@ -15,7 +15,12 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "http": "^0.0.0",
-    "https": "^1.0.0"
+    "https": "^1.0.0",
+    "moment": "^2.24.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "supertest": "^4.0.2"
+  }
 }
