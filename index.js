@@ -78,3 +78,5 @@ app.use((err, req, res, next) => {
 http.createServer(app).listen(3000);
 // Create an HTTPS service identical to the HTTP service.
 https.createServer(options, app).listen(443);
+
+module.exports = app;
