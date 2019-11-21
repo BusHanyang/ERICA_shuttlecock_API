@@ -34,18 +34,24 @@ app.use(function(req, res, next) {
 });
 
 /* router */
-app.use("/" + datekind + "/" + daykind + "/giksa", require("./router/giksa"));
 app.use(
-  "/" + datekind + "/" + daykind + "/shuttlecock_i",
+  ["/" + datekind + "/" + daykind + "/giksa", "/giksa"],
+  require("./router/giksa")
+);
+app.use(
+  ["/" + datekind + "/" + daykind + "/shuttlecock_i", "/shuttlecock_i"],
   require("./router/shuttlecock_i")
 );
 app.use(
-  "/" + datekind + "/" + daykind + "/shuttlecock_o",
+  ["/" + datekind + "/" + daykind + "/shuttlecock_o", "/shuttlecock_o"],
   require("./router/shuttlecock_o")
 );
-app.use("/" + datekind + "/" + daykind + "/subway", require("./router/subway"));
 app.use(
-  "/" + datekind + "/" + daykind + "/yesulin",
+  ["/" + datekind + "/" + daykind + "/subway", "/subway"],
+  require("./router/subway")
+);
+app.use(
+  ["/" + datekind + "/" + daykind + "/yesulin", "/yesulin"],
   require("./router/yesulin")
 );
 
