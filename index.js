@@ -1,10 +1,10 @@
 const express = require("express");
-const moment = require("moment");
 const https = require("https");
 const fs = require("fs");
 const http = require("http");
 // const port = 3000;
 const app = express();
+const func = require("./common");
 
 //FOR GITHUB ACTIONS CI TEST
 if (process.env.cert_secret) {
@@ -22,42 +22,8 @@ if (process.env.cert_secret) {
   };
 }
 
-/*load setting value from json file*/
-const data = JSON.parse(fs.readFileSync("settings.json", "UTF-8"));
-const now = moment().format("YYYY-MM-DD");
-
-/*Functions about define datekind and daykind to make URL query string. */
-function getKind() {
-  const semester = data.calendar[0].semester;
-  const vacation_session = data.calendar[1].vacation_session;
-  const vacation = data.calendar[2].vacation;
-
-  if (moment(now).isBetween(semester.start, semester.end)) {
-    return "semester";
-  } else if (
-    moment(now).isBetween(vacation_session.start, vacation_session.end)
-  ) {
-    return "vacation_session";
-  } else if (moment(now).isBetween(vacation.start, vacation.end)) {
-    return "vacation";
-  } else {
-    return "error";
-  }
-}
-
-function getDayKind() {
-  switch (moment().format("dddd")) {
-    case "Sunday":
-      return "weekend";
-    case "Saturday":
-      return "weekend";
-    default:
-      return "week";
-  }
-}
-
-const daykind = getDayKind();
-const datekind = getKind();
+const daykind = func.getDayKind();
+const datekind = func.getDateKind();
 /*middle ware*/
 app.use(express.static(__dirname + "/public"));
 app.use(function(req, res, next) {
