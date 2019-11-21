@@ -2,8 +2,6 @@ name: CI TEST                        # workflow 이름
 on:
   push:                             # event trigger on push
     branches: 
-      - master
-      - dev
       - 2019_OSS
 
 jobs:
