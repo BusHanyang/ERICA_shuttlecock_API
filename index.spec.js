@@ -24,6 +24,7 @@ describe('GET /', () => {
       server
         .get("/semester/week/subway")
         .expect("Content-Type", /json/)
+        .expect(200 || 201)
         .end((err, res) => {
           if (err) {
             done(err);
@@ -37,6 +38,7 @@ describe('GET /', () => {
       server
         .get("/semester/week/shuttlecock_i")
         .expect("Content-Type", /json/)
+        .expect(200 || 201)
         .end((err, res) => {
           if (err) {
             done(err);
@@ -50,6 +52,7 @@ describe('GET /', () => {
       server
         .get("/semester/week/shuttlecock_o")
         .expect("Content-Type", /json/)
+        .expect(200 || 201)
         .end((err, res) => {
           if (err) {
             done(err);
@@ -63,6 +66,7 @@ describe('GET /', () => {
       server
         .get("/semester/week/giksa")
         .expect("Content-Type", /json/)
+        .expect(200 || 201)
         .end((err, res) => {
           if (err) {
             done(err);
@@ -76,6 +80,7 @@ describe('GET /', () => {
       server
         .get("/semester/week/yesulin")
         .expect("Content-Type", /json/)
+        .expect(200 || 201)
         .end((err, res) => {
           if (err) {
             done(err);
@@ -102,6 +107,7 @@ describe('GET /', () => {
       server
         .get("/vacation/week/shuttlecock_i")
         .expect("Content-Type", /json/)
+        .expect(200 || 201)
         .end((err, res) => {
           if (err) {
             done(err);
@@ -115,6 +121,7 @@ describe('GET /', () => {
       server
         .get("/vacation/week/shuttlecock_o")
         .expect("Content-Type", /json/)
+        .expect(200 || 201)
         .end((err, res) => {
           if (err) {
             done(err);
@@ -128,6 +135,7 @@ describe('GET /', () => {
       server
         .get("/vacation/week/giksa")
         .expect("Content-Type", /json/)
+        .expect(200 || 201)
         .end((err, res) => {
           if (err) {
             done(err);
@@ -141,6 +149,7 @@ describe('GET /', () => {
       server
         .get("/vacation/week/yesulin")
         .expect("Content-Type", /json/)
+        .expect(200 || 201)
         .end((err, res) => {
           if (err) {
             done(err);
@@ -154,6 +163,7 @@ describe('GET /', () => {
       server
         .get("/vacation_session/week/subway")
         .expect("Content-Type", /json/)
+        .expect(200 || 201)
         .end((err, res) => {
           if (err) {
             done(err);
@@ -167,6 +177,7 @@ describe('GET /', () => {
       server
         .get("/vacation_session/week/shuttlecock_i")
         .expect("Content-Type", /json/)
+        .expect(200 || 201)
         .end((err, res) => {
           if (err) {
             done(err);
@@ -180,6 +191,7 @@ describe('GET /', () => {
       server
         .get("/vacation_session/week/shuttlecock_o")
         .expect("Content-Type", /json/)
+        .expect(200 || 201)
         .end((err, res) => {
           if (err) {
             done(err);
@@ -193,6 +205,7 @@ describe('GET /', () => {
       server
         .get("/vacation_session/week/giksa")
         .expect("Content-Type", /json/)
+        .expect(200 || 201)
         .end((err, res) => {
           if (err) {
             done(err);
@@ -206,6 +219,7 @@ describe('GET /', () => {
       server
         .get("/vacation_session/week/yesulin")
         .expect("Content-Type", /json/)
+        .expect(200 || 201)
         .end((err, res) => {
           if (err) {
             done(err);
