@@ -3,12 +3,18 @@
 
 [![Build Status](http://server.jaram.net:5903/buildStatus/icon?job=shuttlecock-api)](http://server.jaram.net:5903/job/shuttlecock-api/) ![API Status](https://img.shields.io/website?down_color=lightgrey&down_message=dead&label=API&up_color=blue&up_message=Online&url=https%3A%2F%2Fshuttle.jaram.net%2Fsemester%2Fweek%2Fgiksa) ![license](https://img.shields.io/badge/license-GPL3.0-important)
 
+*Jenkins 실시간 빌드 상태는 위 뱃지를 클릭해서 확인하실 수 있습니다.*
 
 ### 1. 사용법
 
 URL 입력을 통해 정류소의 시간표를 JSON 형태로 전달받습니다.
 URL 의 구성은 다음과 같습니다.<br>
-`/시간표종류/일자구분/정류소종류`<br><br>
+**Full Path** : `/시간표종류/일자구분/정류소종류`
+**Short Path** : `/정류소종류`
+
+*Full Path* 접근방식으로 특정 기간, 특정 정류소의 시간표를 확인할 수 있습니다.
+*Short Path* 접근 방식으로는 조회 당시에 해당 정류장의 시간표를 가져옵니다.
+<br>
 각 구분에 대한 명시는 아래 항목을 참조하세요.
 <br>
 * 1) 시간표 종류
@@ -41,14 +47,17 @@ URL 의 구성은 다음과 같습니다.<br>
 <br>
 따라서 조합된 URL 은 다음과 같습니다.
 
-* 학기중 평일 기숙사방향 셔틀콕의 시간표를 불러올 경우<br>
+* 학기중 평일 기숙사방향 셔틀콕의 시간표를 불러올 경우. *(Full path)*<br>
 
   `/semester/week/shuttlecock_i`
 
 
-* 학기중 주말 기숙사의 시간표를 불러올 경우<br>
+* 학기중 주말 기숙사의 시간표를 불러올 경우. *(Full path)*<br>
 
   `/semester/weekend/giksa`<br>
+
+* 현재 기간의 예술인아파트 시간표를 불러올 경우. *(Short path)*
+`/yesulin`
 
 
 ### 2. JSON 파일의 구성
@@ -85,11 +94,17 @@ json 데이터의 구성은 다음과 같이 이루어져 있습니다.
 |`C`|순환노선|
 |`DH`|한대앞역 행|
 |`DY`|예술인아파트 행|
-|`(공백)`|셔틀콕 회송, 기숙사행|
-> 셔틀콕회송 및 기숙사행의 경우 예술인 아파트나 한대앞역에서 출발하여 셔틀콕으로 돌아오는 노선 및 셔틀콕을 출발해 기숙사로 들어가는 노선을 의미합니다.<br>이와 같은 운행은 목적지가 명확하여 따로 구분문자를 부여하지 않았습니다.
+|`R`|기숙사행|
+|`NA`|정보없음|
 
 
-### 3. 시간표 정확도 및 출처 관련
+### 3. 정규학기, 계절학기, 방학 의 구분
+[공식 학사일정](https://www.hanyang.ac.kr/web/www/cal_academic)에 따라 `/settings.json` 에 각 일정의 시작일과 종료일을 정의 해 두었습니다.
+
+Short Path 를 통해 API를 호출 할 경우, 이 파일에 기록된 일자를 기준으로 판별하여 데이터를 반환합니다.
+
+
+### 4. 시간표 정확도 및 출처 관련
 이 시간표 데이터는 한양대학교ERICA 캠퍼스 총무관리처에서 배포한 **"한양대학교ERICA 셔틀버스 운행노선 & 시간표"** 에 기준하여 작성되었습니다.
 
 현재 JSON 데이터의 기준은 19.09.23 에 배포된 문서를 기반으로 하여 작성되었으며 원본은 `timetable/general.pdf`와 `timetable/source.pdf` 에서 확인하실 수 있습니다.
