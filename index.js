@@ -1,27 +1,9 @@
 const express = require("express");
 const https = require("https");
-const fs = require("fs");
 const http = require("http");
 // const port = 3000;
 const app = express();
-const func = require("./common");
 
-//FOR GITHUB ACTIONS CI TEST
-if (process.env.cert_secret) {
-  var options = {
-    key: process.env.priv,
-    cert: process.env.cert
-  };
-
-//IF RUN IN RELEASE 
-} else {
-  /*https*/
-  var options = {
-    key: fs.readFileSync('ssl/privkey.pem'),
-    cert: fs.readFileSync('ssl/cert.pem')
-  };
-
-}
 
 
 
@@ -71,6 +53,6 @@ app.use((err, req, res, next) => {
 // Create an HTTP service.
 http.createServer(app).listen(3000);
 // Create an HTTPS service identical to the HTTP service.
-https.createServer(options, app).listen(443);
+https.createServer(app).listen(443);
 
 module.exports = app;
