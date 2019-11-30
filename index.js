@@ -1,7 +1,5 @@
 const express = require("express");
-const https = require("https");
 const http = require("http");
-// const port = 3000;
 const app = express();
 
 
@@ -51,8 +49,7 @@ app.use((err, req, res, next) => {
 
 /*server*/
 // Create an HTTP service.
-http.createServer(app).listen(3000);
-// Create an HTTPS service identical to the HTTP service.
-https.createServer(app).listen(443);
+http.createServer(app).listen(8080);
+
 
 module.exports = app;
