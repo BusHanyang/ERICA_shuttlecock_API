@@ -4,7 +4,7 @@ const fs = require("fs");
 
 /*load setting value from json file*/
 const data = JSON.parse(fs.readFileSync("./settings.json", "UTF-8"));
-const now = moment().format("YYYY-MM-DD");
+const now = moment().utcOffset('+0900').format("YYYY-MM-DD");
 
 /*Functions about define datekind and daykind to make URL query string. */
 function getDateKind() {
@@ -26,10 +26,10 @@ function getDateKind() {
 }
 
 function getDayKind() {
-  switch (moment().format("dddd")) {
-    case "Sunday":
+  switch (moment().utcOffset('+0900').day()) {
+    case "0"://sunday
       return "weekend";
-    case "Saturday":
+    case "6"://saturday
       return "weekend";
     default:
       return "week";
