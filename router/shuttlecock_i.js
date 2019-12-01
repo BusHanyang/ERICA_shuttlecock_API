@@ -26,6 +26,8 @@ router.get('/', (req, res) => {
     daykind = func.getDayKind()
   }
 
+    console.log("Date Kind : " + datekind + "\n");
+    console.log("Day Kind : " + daykind + "\n");
 
   switch (datekind) {
     case 'semester': // 학기중
