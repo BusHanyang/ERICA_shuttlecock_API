@@ -26,14 +26,16 @@ function getDateKind() {
 }
 
 function getDayKind() {
+  console.log((moment().utcOffset('+0900').day()));
   switch (moment().utcOffset('+0900').day()) {
-    case "0"://sunday
+    case 0://sunday
       return "weekend";
-    case "6"://saturday
+    case 6://saturday
       return "weekend";
     default:
       return "week";
   }
+  
 }
 
 module.exports.getDayKind = getDayKind
