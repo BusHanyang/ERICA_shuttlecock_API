@@ -2,12 +2,8 @@ name: CI TEST                        # workflow 이름
 on:
   push:                             # event trigger on push
     branches: 
-<<<<<<< HEAD
       - master
       - dev
-=======
->>>>>>> dev
-      - 2019_OSS
 
 jobs:
   build:                             # job id
@@ -25,4 +21,4 @@ jobs:
     - name: Build docker image    
       run: docker build -t kygha7205/shuttle_api:latest .
     - name: Test image
-      run: docker run -d -p 3000:3000 --name shuttle-api kygha7205/shuttle_api:latest
+      run: docker run -d -p 8080:8080 --name shuttle-api kygha7205/shuttle_api:latest
