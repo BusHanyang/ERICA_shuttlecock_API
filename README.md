@@ -4,6 +4,11 @@
 [![Build Status](http://server.jaram.net:5903/buildStatus/icon?job=shuttlecock-api)](http://server.jaram.net:5903/job/shuttlecock-api/) ![API Status](https://img.shields.io/website?down_color=lightgrey&down_message=offline&up_color=blue&up_message=online&url=https%3A%2F%2Fhyu-shuttlebus.appspot.com%2Fsubway) ![license](https://img.shields.io/badge/license-GPL3.0-important)
 
 *Jenkins 실시간 빌드 상태는 위 뱃지를 클릭해서 확인하실 수 있습니다.*
+
+* 이 프로젝트는 현재 Google App Engine 에서 구동되고 있습니다.
+* [Devlog](https://github.com/CXZ7720/shuttlecock_API/wiki/devlog) 및 [서비스 구조도](https://github.com/CXZ7720/shuttlecock_API/wiki/Service_Diagram)는 위키를 참조하시길 바랍니다.
+* API 이용관련 문의는 kygha7205@naver.com 으로 연락주시기 바랍니다.
+
 ### 0. 설치방법
 PR 은 언제나 환영합니다!!
 * 이 프로젝트를 실행하기 위해서는 Node.js 와 Yarn 이 설치되어야 합니다.
