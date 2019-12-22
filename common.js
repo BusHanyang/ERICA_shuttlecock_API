@@ -26,8 +26,16 @@ function getDateKind() {
 }
 
 function getDayKind() {
+  const holiday = data.calendar[3].holiday;
+
   console.log((moment().utcOffset('+0900').day()));
-  switch (moment().utcOffset('+0900').day()) {
+  let momentDay = moment().utcOffset('+0900').day();
+  if(holiday.indexOf(now) !== -1){//holiday 배열에서 오늘날짜 값을 찾을 경우
+    console.log("공휴일 보정");
+    momentDay = 0;//일요일로 날짜 보정.
+  }
+
+  switch (momentDay) {
     case 0://sunday
       return "weekend";
     case 6://saturday
