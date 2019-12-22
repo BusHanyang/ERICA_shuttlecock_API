@@ -15,3 +15,11 @@
 
 # Node.js dependencies:
 node_modules/
+
+
+# User specific files
+ssl/
+.github/
+.dockerignore
+.prettierrc
+index.spec.js
