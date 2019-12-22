@@ -14,10 +14,7 @@ jobs:
     - name: GitHub Action for Yarn Pkg
       uses: funkyremi/yarn-github-action@1.0.0
     - name: Run Node server
-      env:                           # Set the secret as an environment
-        cert_secret:  ${{ secrets.cert }}
-        key:  ${{ secrets.priv }}
-      run: sudo chmod -R 777 /home/runner/work/shuttlecock_API/ && yarn && yarn test
+      run: sudo yarn && yarn test
     - name: Build docker image    
       run: docker build -t kygha7205/shuttle_api:latest .
     - name: Test image
