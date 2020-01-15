@@ -12,13 +12,13 @@ function getDateKind() {
   const vacation_session = data.calendar[1].vacation_session;
   const vacation = data.calendar[2].vacation;
 
-  if (moment(now).isBetween(semester.start, semester.end)) {
+  if (moment(now).isBetween(semester.start, semester.end, null, [])) {
     return "semester";
   } else if (
-    moment(now).isBetween(vacation_session.start, vacation_session.end)
+    moment(now).isBetween(vacation_session.start, vacation_session.end, null, [])
   ) {
     return "vacation_session";
-  } else if (moment(now).isBetween(vacation.start, vacation.end)) {
+  } else if (moment(now).isBetween(vacation.start, vacation.end, null, [])) {
     return "vacation";
   } else {
     return "error";
@@ -28,7 +28,7 @@ function getDateKind() {
 function getDayKind() {
   const holiday = data.calendar[3].holiday;
 
-  console.log((moment().utcOffset('+0900').day()));
+  // console.log((moment().utcOffset('+0900').day()));
   let momentDay = moment().utcOffset('+0900').day();
   if(holiday.indexOf(now) !== -1){//holiday 배열에서 오늘날짜 값을 찾을 경우
     console.log("공휴일 보정");
