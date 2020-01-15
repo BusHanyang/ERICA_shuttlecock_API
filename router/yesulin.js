@@ -45,7 +45,7 @@ router.get('/', (req, res) => {
         var jsonPath = path.join(__dirname, '..', 'timetable', 'vacation', 'weekend', 'YesulIn_weekend.json')
       }
       break
-    case 'vacation_session': // 방학중
+    case 'vacation_session': // 계절학기중
       if (daykind == 'week') { // 주중
         var jsonPath = path.join(__dirname, '..', 'timetable', 'vacation_session', 'week', 'YesulIn_week.json')
       } else if (daykind == 'weekend') { // 주말
