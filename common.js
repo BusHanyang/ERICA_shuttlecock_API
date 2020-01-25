@@ -46,5 +46,17 @@ function getDayKind() {
   
 }
 
+function isHalt(){
+    const haltList = data.calendar[4].halt;
+    console.log(haltList);
+    if(haltList.indexOf(now) !== -1){
+      return "halted"
+    } else {
+      return ""
+    }
+}
+
+
 module.exports.getDayKind = getDayKind
 module.exports.getDateKind = getDateKind
+module.exports.isHalt = isHalt

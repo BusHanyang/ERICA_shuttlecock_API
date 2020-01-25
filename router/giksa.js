@@ -11,7 +11,7 @@ function urlParse (urlstr) {
 
 var datekind = "";
 var daykind = "";
-
+var isHalt = "";
 
 
 router.get('/', (req, res) => {
@@ -26,9 +26,11 @@ router.get('/', (req, res) => {
     //Short Path 로 접근 한 경우
     datekind = func.getDateKind();
     daykind = func.getDayKind();
+    isHalt = func.isHalt();
   }
   console.log("Date Kind : " + datekind + "\n")
   console.log("Day Kind : " + daykind + "\n");
+  console.log("isHalted : " + isHalt + "\n");
 
   switch (datekind) {
     case 'semester': // 학기중
@@ -55,6 +57,9 @@ router.get('/', (req, res) => {
     default:
       break
   }
+    if (isHalt == "halted") {
+      return res.status(200).json({ status: "Halt" });
+    }
 
   try {
     var data = fs.readFileSync(jsonPath, 'UTF-8')
