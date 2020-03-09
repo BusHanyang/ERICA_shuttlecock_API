@@ -1,10 +1,10 @@
 const express = require("express");
 const http = require("http");
 const app = express();
+const helmet = require('helmet')
 
-
-
-
+app.use(helmet())
+app.use(helmet.noCache())
 
 /*middle ware*/
 app.use(express.static(__dirname + "/public"));
