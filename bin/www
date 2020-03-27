@@ -1,0 +1,30 @@
+var app = require("../index")
+var http = require("http");
+
+const PORT = 8080;
+
+var server = http.createServer(app);
+
+server.listen(PORT);
+
+server.on("error", err => {
+  if (error.syscall !== "listen") {
+    throw error;
+  }
+
+  switch (error.code) {
+    case "EACCES":
+      console.error(PORT + " requires elevated privileges");
+      process.exit(1);
+      break;
+    case "EADDRINUSE":
+      console.error(PORT + " is already in use");
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+});
+server.on("listening", () => {
+  console.log("Listening on " + PORT);
+});

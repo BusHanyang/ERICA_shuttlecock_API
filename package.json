@@ -1,16 +1,16 @@
 {
   "name": "shuttlecock_API",
   "version": "1.0.0",
-  "start": "node index.js",
+  "start": "node bin/www",
   "scripts": {
-    "start": "node index.js",
+    "start": "node bin/www",
     "test": "node ./node_modules/mocha/bin/mocha --recursive --exit ./**/*.spec.js"
   },
   "description": "Shuttlecock Timetable API",
-  "main": "index.js",
-  "repository": "https://github.com/CXZ7720/shuttlecock_API.git",
-  "author": "Yeonggyun Kim <kygha7205@naver.com>",
-  "license": "MIT",
+  "main": "bin/www",
+  "repository": "https://github.com/BusHanyang/ERICA_shuttlecock_API.git",
+  "author": "BusHanyang <hybus.app@gmail.com>",
+  "license": "GPL-3.0",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
