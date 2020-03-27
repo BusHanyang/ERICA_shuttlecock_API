@@ -67,7 +67,9 @@ router.get('/', (req, res) => {
     console.log(err)
     return res.status(404).json({ error: 'Incorrect column' })
   }
-  const jsondata = JSON.parse(data)
+  let jsondata = JSON.parse(data);
+  jsondata.datekind = datekind;
+  jsondata.daykind = daykind;
   if (daykind == 'week') { //주중일 경우
     return res.json(jsondata.shuttlecock_o_week)
   } else { //주말일 경우
