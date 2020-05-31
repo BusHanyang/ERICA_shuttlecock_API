@@ -1,7 +1,5 @@
 {
-  "yesulin_week": [
-    { "time": "08:05", "type": "" },
-    { "time": "08:35", "type": "" },
+  "yesulin_weekend": [
     { "time": "09:05", "type": "" },
     { "time": "09:35", "type": "" },
     { "time": "10:05", "type": "" },
@@ -28,8 +26,6 @@
     { "time": "20:35", "type": "" },
     { "time": "21:05", "type": "" },
     { "time": "21:35", "type": "" },
-    { "time": "22:05", "type": "" },
-    { "time": "22:35", "type": "" },
-    { "time": "23:05", "type": "" }
+    { "time": "22:05", "type": "" }
   ]
 }
