@@ -72,8 +72,6 @@
     { "time": "20:15", "type": "DH" },
     { "time": "20:45", "type": "DH" },
     { "time": "21:15", "type": "DH" },
-    { "time": "21:45", "type": "DH" },
-    { "time": "22:15", "type": "DH" },
-    { "time": "22:45", "type": "DH" }
+    { "time": "21:45", "type": "DH" }
   ]
 }
