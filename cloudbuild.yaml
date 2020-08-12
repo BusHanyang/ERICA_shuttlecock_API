@@ -8,7 +8,7 @@ steps:
         "-r",
         "-c",
         "-d",
-        ".gs://hybus-timetable",
+        "gs://hybus-timetable",
         "gs://hybus-timetable-backup",
       ]
   # copy new files from git
