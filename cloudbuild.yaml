@@ -1,5 +1,25 @@
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
-  args:
-  - app
-  - deploy
+  # backup previous files to backup storage bucket
+  - name: gcr.io/cloud-builders/gsutil
+    args:
+      [
+        "-m",
+        "rsync",
+        "-r",
+        "-c",
+        "-d",
+        ".gs://hybus-timetable",
+        "gs://hybus-timetable-backup",
+      ]
+  # copy new files from git
+  - name: gcr.io/cloud-builders/gsutil
+    args:
+      [
+        "-m",
+        "rsync",
+        "-r",
+        "-c",
+        "-d",
+        "./timetable",
+        "gs://hybus-timetable-backup",
+      ]
