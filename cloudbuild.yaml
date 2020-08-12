@@ -5,7 +5,7 @@ steps:
         "-m", # accelerate upload by processing multiple files
         "rsync", # using rsync framework
         "-r",
-        "-c", # aviods reupload unchanged files
+        "-c", # avoids reupload unchanged files
         "-d",
         "gs://hybus-timetable", # source directory
         "gs://hybus-timetable-backup", # target directory
