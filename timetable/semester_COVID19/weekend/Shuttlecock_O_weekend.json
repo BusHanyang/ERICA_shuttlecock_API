@@ -1,0 +1,18 @@
+{
+  "shuttlecock_o_weekend": [
+    { "time": "08:50", "type": "C" },
+    { "time": "09:50", "type": "C" },
+    { "time": "10:50", "type": "C" },
+    { "time": "11:50", "type": "C" },
+    { "time": "12:50", "type": "C" },
+    { "time": "13:50", "type": "C" },
+    { "time": "14:50", "type": "C" },
+    { "time": "15:50", "type": "C" },
+    { "time": "16:50", "type": "C" },
+    { "time": "17:50", "type": "C" },
+    { "time": "18:50", "type": "C" },
+    { "time": "19:50", "type": "C" },
+    { "time": "20:50", "type": "C" },
+    { "time": "21:50", "type": "C" }
+  ]
+}
