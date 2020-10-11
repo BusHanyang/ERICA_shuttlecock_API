@@ -1,5 +1,6 @@
 {
   "shuttlecock_i_weekend": [
+    { "time": "08:15", "type": "R" },
     { "time": "09:15", "type": "R" },
     { "time": "10:15", "type": "R" },
     { "time": "11:15", "type": "R" },
