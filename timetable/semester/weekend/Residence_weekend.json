@@ -1,6 +1,5 @@
 {
   "residence_weekend": [
-    { "time": "07:45", "type": "C" },
     { "time": "08:45", "type": "C" },
     { "time": "09:45", "type": "C" },
     { "time": "10:45", "type": "C" },

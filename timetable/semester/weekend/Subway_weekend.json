@@ -1,6 +1,5 @@
 {
   "subway_weekend": [
-    { "time": "08:00", "type": "C" },
     { "time": "09:00", "type": "C" },
     { "time": "10:00", "type": "C" },
     { "time": "11:00", "type": "C" },
